@@ -3,12 +3,8 @@ import pegs, os
 let
   args = commandLineParams()
   pattern = args[0]
+  p = peg(pattern)
   filenames = args[1..^1]
-
-#echo "pattern: " & pattern
-#echo "filenames: " & $filenames
-
-let p = peg(pattern)
 var
   matches: seq[string] = @[]
   line: TaintedString
