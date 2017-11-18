@@ -2,9 +2,18 @@ import pegs, os
 
 let
   args = commandLineParams()
+if len(args) < 2:
+  echo "Usage: peg <pattern> <filename> [<filename2> ...]"
+  quit(1)
+if len(args) > 0 and args[0] == "-h":
+  echo "Usage: peg <pattern> <filename> [<filename2> ...]"
+  quit(0)
+
+let
   pattern = args[0]
   p = peg(pattern)
   filenames = args[1..^1]
+
 var
   matches: array[0.. MaxSubpatterns-1, string]
   line: TaintedString
