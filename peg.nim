@@ -23,9 +23,14 @@ for file in filenames:
     if contains(line, p, matches):
       for i, m in pairs(matches):
         if m != nil:
-          echo m
+          if i > 0:
+            write(stdout, " ")
+          write(stdout, m)
         elif i == 0:
           echo line
+          break
+        else:
+          write(stdout, "\n")
           break
 
   close(fh)
