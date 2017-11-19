@@ -1,7 +1,11 @@
 # peg
-PEG version of grep
+A version of grep with PEGs instead of regular expressions
 
-This uses PEG expressions to print out lines in a file.  It also supports selectively printing of captures.  For more info on PEG expressions see [manual](https://nim-lang.org/docs/pegs.html).
+This uses Parsing Expression Grammars (PEG) expressions to print out lines in a file.  It also supports selectively printing of captures.  For more info on PEGs:
+
+* [Syntax manual](https://nim-lang.org/docs/pegs.html).  Use this to determine what PEG syntax to use.
+* [Tutorial](https://github.com/PhilippeSigaud/Pegged/wiki/PEG-Basics)
+* [Site](http://bford.info/packrat/) from the inventor
 
 ## Examples
 
@@ -37,7 +41,7 @@ Note: the above can be written as `peg false passwd` since the whole PEG express
 To find lines that start with `bin`:
 
 ```
-$ peg "^'bin'" passwd
+$ peg "^'bin'" passwd  # or:
 $ peg ^bin passwd
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
 ```
@@ -71,6 +75,15 @@ Package Manager
 Container Hypervisor
 ```
 
+Print username and user id if the user name is the same as the full name:
+
+```
+$ peg "s <- {user} ':x:' {\d+} ':' \d+ ':' user ""user <- [a-z]+" passwd
+root 0
+bin 2
+sys 3
+sync 4
+dnsmasq 109
 
 
 
