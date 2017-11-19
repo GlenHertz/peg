@@ -1,0 +1,11 @@
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:Daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+syslog:x:104:108:System Logger:/home/syslog:/bin/false
+_apt:x:105:65534:Package Manager:/nonexistent:/bin/false
+lxd:x:106:65534:Container Hypervisor:/var/lib/lxd/:/bin/false
+messagebus:x:107:111:Message Bus:/var/run/dbus:/bin/false
+dnsmasq:x:109:65534:dnsmasq,,,:/var/lib/misc:/bin/false
+sshd:x:110:65534:SSH Daemon:/var/run/sshd:/usr/sbin/nologin
