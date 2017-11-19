@@ -1,7 +1,7 @@
 # peg
 PEG version of grep
 
-This uses PEG expressions to print out lines in a file.  It also supports selectively printing of captures.  For more info on PEG expressions see (manual)[https://nim-lang.org/docs/pegs.html].
+This uses PEG expressions to print out lines in a file.  It also supports selectively printing of captures.  For more info on PEG expressions see [manual](https://nim-lang.org/docs/pegs.html).
 
 ## Examples
 
@@ -70,6 +70,7 @@ $ peg "@':x:' @':' @':' @@':'" passwd | peg "i'p'"
 Package Manager
 Container Hypervisor
 ```
+
 
 
 
